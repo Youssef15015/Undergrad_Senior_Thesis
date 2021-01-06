@@ -1,0 +1,499 @@
+import numpy as np
+import pynbody as pb
+import matplotlib.pyplot as plt
+
+# The time each star formed
+time=np.genfromtxt('timeform.txt')
+
+#For time step beginning with 643 Myr, a.k.a 24. 
+first=np.logical_and(time >= .322,
+                     time <= .543)
+# 36
+second=np.logical_and(time >= .543,
+                      time <= .864)
+
+#I will skip 48 for now, 60
+
+third=np.logical_and(time >= .864,
+                      time <= 1.506)
+
+fourth=np.logical_and(time >= 1.506,
+                      time <=  1.827)
+
+fifth=np.logical_and(time >= 1.827,
+                      time <= 2.148)
+
+sixth=np.logical_and(time >= 2.148,
+                      time <= 2.469)
+
+seventh=np.logical_and(time >= 2.469,
+                      time <= 2.790)
+
+eigth=np.logical_and(time >= 2.790,
+                      time <= 3.111)
+
+ninth=np.logical_and(time >= 3.111,
+                      time <= 3.432)
+
+tenth=np.logical_and(time >= 3.432,
+                      time <= 3.753)
+
+eleven=np.logical_and(time >= 3.753,
+                      time <= 4.074)
+
+twelve=np.logical_and(time >= 4.074,
+                      time <= 4.397)
+
+thirteen=np.logical_and(time >= 4.397,
+                      time <= 4.716)
+
+fourteen=np.logical_and(time >= 4.716,
+                      time <= 5.037)
+
+fifteen=np.logical_and(time >= 5.037,
+                      time <= 5.358)
+
+sixteen=np.logical_and(time >= 5.358,
+                      time <= 5.679)
+
+seventeen=np.logical_and(time >= 5.679,
+                      time <= 6.000)
+
+eighteen=np.logical_and(time >= 6.000,
+                      time <= 6.321)
+
+nineteen=np.logical_and(time >= 6.321,
+                      time <= 6.642)
+
+twenty=np.logical_and(time >= 6.642,
+                      time <= 6.963)
+
+twentyone=np.logical_and(time >= 6.963,
+                      time <= 7.284)
+
+twentytwo=np.logical_and(time >= 7.284,
+                      time <= 7.605)
+
+twentythree=np.logical_and(time >= 7.605,
+                      time <= 7.926)
+
+twentyfour=np.logical_and(time >= 7.926,
+                      time <= 8.247)
+
+twentyfive=np.logical_and(time >= 8.247,
+                      time <= 8.568)
+
+twentysix=np.logical_and(time >= 8.568,
+                      time <= 8.889)
+
+twentyseven=np.logical_and(time >= 8.889,
+                      time <= 9.210)
+
+twentyeight=np.logical_and(time >= 9.210,
+                      time <= 9.531)
+
+twentynine=np.logical_and(time >= 9.531,
+                      time <= 9.852)
+
+thirty=np.logical_and(time >= 9.852,
+                      time <= 10.173)
+
+thirtyone=np.logical_and(time >= 10.173,
+                      time <= 10.494)
+
+thirtytwo=np.logical_and(time >= 10.494,
+                      time <= 10.815)
+
+thirtythree=np.logical_and(time >= 10.815,
+                      time <= 11.136)
+
+thirtyfour=np.logical_and(time >= 11.136,
+                      time <= 11.457)
+
+thirtyfive=np.logical_and(time >= 11.457,
+                      time <= 11.778)
+
+thirtysix=np.logical_and(time >= 11.778,
+                      time <= 12.099)
+
+thirtyseven=np.logical_and(time >= 12.099,
+                      time <= 12.419)
+
+thirtyeight=np.logical_and(time >= 12.419,
+                      time <= 12.741)
+
+thirtynine=np.logical_and(time >= 12.741,
+                      time <= 13.062)
+
+fourty=np.logical_and(time >= 13.062,
+                      time <= 13.383)
+
+fourtyone=np.logical_and(time >= 13.383,
+                      time <= 13.7) 
+
+
+
+s= pb.load('/data/REPOSITORY/e12Gals/h277.cosmo50cmb.3072g14HMbwK/h277.cosmo50cmb.3072g14HMbwK.00512/h277.cosmo50cmb.3072g14HMbwK.00512')
+h=s.halos()
+Pressure= 
+## The IDS of the gas of the stars that formed
+igas= np.genfromtxt('igasords.txt')
+
+
+
+
+
+print('-------------------------------------------------------------------')
+
+
+table=[]
+
+
+s1= pb.load('/data/REPOSITORY/e12Gals/h277.cosmo50cmb.3072g14HMbwK/h277.cosmo50cmb.3072g14HMbwK.00024/h277.cosmo50cmb.3072g14HMbwK.00024')
+gas_mask1= np.isin(s1.g['iord'],igas[first])
+s1a=s1.g[gas_mask1]
+jerrya=
+table.append(jerrya)
+
+s1= pb.load('/data/REPOSITORY/e12Gals/h277.cosmo50cmb.3072g14HMbwK/h277.cosmo50cmb.3072g14HMbwK.00036/h277.cosmo50cmb.3072g14HMbwK.00036')
+gas_mask1= np.isin(s1.g['iord'],igas[second])
+s1a=s1.g[gas_mask1]
+jerrya=(s1a['rho']/s1a['mass']).in_units('cm**-3')*s1a['temp']
+table.append(jerrya)
+
+s1= pb.load('/data/REPOSITORY/e12Gals/h277.cosmo50cmb.3072g14HMbwK/h277.cosmo50cmb.3072g14HMbwK.00048/h277.cosmo50cmb.3072g14HMbwK.00048')
+gas_mask1= np.isin(s1.g['iord'],igas[third])
+s1a=s1.g[gas_mask1]
+jerrya=(s1a['rho']/s1a['mass']).in_units('cm**-3')*s1a['temp']
+table.append(jerrya)
+
+s1= pb.load('/data/REPOSITORY/e12Gals/h277.cosmo50cmb.3072g14HMbwK/h277.cosmo50cmb.3072g14HMbwK.00060/h277.cosmo50cmb.3072g14HMbwK.00060')
+gas_mask1= np.isin(s1.g['iord'],igas[fourth])
+s1a=s1.g[gas_mask1]
+jerrya=(s1a['rho']/s1a['mass']).in_units('cm**-3')*s1a['temp']
+table.append(jerrya)
+
+s1= pb.load('/data/REPOSITORY/e12Gals/h277.cosmo50cmb.3072g14HMbwK/h277.cosmo50cmb.3072g14HMbwK.00072/h277.cosmo50cmb.3072g14HMbwK.00072')
+gas_mask1= np.isin(s1.g['iord'],igas[fifth])
+s1a=s1.g[gas_mask1]
+jerrya=(s1a['rho']/s1a['mass']).in_units('cm**-3')*s1a['temp']
+table.append(jerrya)
+
+s1= pb.load('/data/REPOSITORY/e12Gals/h277.cosmo50cmb.3072g14HMbwK/h277.cosmo50cmb.3072g14HMbwK.00084/h277.cosmo50cmb.3072g14HMbwK.00084')
+gas_mask1= np.isin(s1.g['iord'],igas[sixth])
+s1a=s1.g[gas_mask1]
+jerrya=(s1a['rho']/s1a['mass']).in_units('cm**-3')*s1a['temp']
+table.append(jerrya)
+
+s1= pb.load('/data/REPOSITORY/e12Gals/h277.cosmo50cmb.3072g14HMbwK/h277.cosmo50cmb.3072g14HMbwK.00096/h277.cosmo50cmb.3072g14HMbwK.00096')
+gas_mask1= np.isin(s1.g['iord'],igas[seventh])
+s1a=s1.g[gas_mask1]
+jerrya=(s1a['rho']/s1a['mass']).in_units('cm**-3')*s1a['temp']
+table.append(jerrya)
+
+s1= pb.load('/data/REPOSITORY/e12Gals/h277.cosmo50cmb.3072g14HMbwK/h277.cosmo50cmb.3072g14HMbwK.00108/h277.cosmo50cmb.3072g14HMbwK.00108')
+gas_mask1= np.isin(s1.g['iord'],igas[eigth])
+s1a=s1.g[gas_mask1]
+jerrya=(s1a['rho']/s1a['mass']).in_units('cm**-3')*s1a['temp']
+table.append(jerrya)
+
+s1= pb.load('/data/REPOSITORY/e12Gals/h277.cosmo50cmb.3072g14HMbwK/h277.cosmo50cmb.3072g14HMbwK.00120/h277.cosmo50cmb.3072g14HMbwK.00120')
+gas_mask1= np.isin(s1.g['iord'],igas[ninth])
+s1a=s1.g[gas_mask1]
+jerrya=(s1a['rho']/s1a['mass']).in_units('cm**-3')*s1a['temp']
+table.append(jerrya)
+
+s1= pb.load('/data/REPOSITORY/e12Gals/h277.cosmo50cmb.3072g14HMbwK/h277.cosmo50cmb.3072g14HMbwK.00132/h277.cosmo50cmb.3072g14HMbwK.00132')
+gas_mask1= np.isin(s1.g['iord'],igas[tenth])
+s1a=s1.g[gas_mask1]
+jerrya=(s1a['rho']/s1a['mass']).in_units('cm**-3')*s1a['temp']
+table.append(jerrya)
+
+s1= pb.load('/data/REPOSITORY/e12Gals/h277.cosmo50cmb.3072g14HMbwK/h277.cosmo50cmb.3072g14HMbwK.00144/h277.cosmo50cmb.3072g14HMbwK.00144')
+gas_mask1= np.isin(s1.g['iord'],igas[eleven])
+s1a=s1.g[gas_mask1]
+jerrya=(s1a['rho']/s1a['mass']).in_units('cm**-3')*s1a['temp']
+table.append(jerrya)
+
+s1= pb.load('/data/REPOSITORY/e12Gals/h277.cosmo50cmb.3072g14HMbwK/h277.cosmo50cmb.3072g14HMbwK.00156/h277.cosmo50cmb.3072g14HMbwK.00156')
+gas_mask1= np.isin(s1.g['iord'],igas[twelve])
+s1a=s1.g[gas_mask1]
+jerrya=(s1a['rho']/s1a['mass']).in_units('cm**-3')*s1a['temp']
+table.append(jerrya)
+
+s1= pb.load('/data/REPOSITORY/e12Gals/h277.cosmo50cmb.3072g14HMbwK/h277.cosmo50cmb.3072g14HMbwK.00168/h277.cosmo50cmb.3072g14HMbwK.00168')
+gas_mask1= np.isin(s1.g['iord'],igas[thirteen])
+s1a=s1.g[gas_mask1]
+jerrya=(s1a['rho']/s1a['mass']).in_units('cm**-3')*s1a['temp']
+table.append(jerrya)
+
+s1= pb.load('/data/REPOSITORY/e12Gals/h277.cosmo50cmb.3072g14HMbwK/h277.cosmo50cmb.3072g14HMbwK.00180/h277.cosmo50cmb.3072g14HMbwK.00180')
+gas_mask1= np.isin(s1.g['iord'],igas[fourteen])
+s1a=s1.g[gas_mask1]
+jerrya=(s1a['rho']/s1a['mass']).in_units('cm**-3')*s1a['temp']
+table.append(jerrya)
+
+s1= pb.load('/data/REPOSITORY/e12Gals/h277.cosmo50cmb.3072g14HMbwK/h277.cosmo50cmb.3072g14HMbwK.00192/h277.cosmo50cmb.3072g14HMbwK.00192')
+gas_mask1= np.isin(s1.g['iord'],igas[fifteen])
+s1a=s1.g[gas_mask1]
+jerrya=(s1a['rho']/s1a['mass']).in_units('cm**-3')*s1a['temp']
+table.append(jerrya)
+
+s1= pb.load('/data/REPOSITORY/e12Gals/h277.cosmo50cmb.3072g14HMbwK/h277.cosmo50cmb.3072g14HMbwK.00204/h277.cosmo50cmb.3072g14HMbwK.00204')
+gas_mask1= np.isin(s1.g['iord'],igas[sixteen])
+s1a=s1.g[gas_mask1]
+jerrya=(s1a['rho']/s1a['mass']).in_units('cm**-3')*s1a['temp']
+table.append(jerrya)
+
+s1= pb.load('/data/REPOSITORY/e12Gals/h277.cosmo50cmb.3072g14HMbwK/h277.cosmo50cmb.3072g14HMbwK.00216/h277.cosmo50cmb.3072g14HMbwK.00216')
+gas_mask1= np.isin(s1.g['iord'],igas[seventeen])
+s1a=s1.g[gas_mask1]
+jerrya=(s1a['rho']/s1a['mass']).in_units('cm**-3')*s1a['temp']
+table.append(jerrya)
+
+s1= pb.load('/data/REPOSITORY/e12Gals/h277.cosmo50cmb.3072g14HMbwK/h277.cosmo50cmb.3072g14HMbwK.00228/h277.cosmo50cmb.3072g14HMbwK.00228')
+gas_mask1= np.isin(s1.g['iord'],igas[eighteen])
+s1a=s1.g[gas_mask1]
+jerrya=(s1a['rho']/s1a['mass']).in_units('cm**-3')*s1a['temp']
+table.append(jerrya)
+
+s1= pb.load('/data/REPOSITORY/e12Gals/h277.cosmo50cmb.3072g14HMbwK/h277.cosmo50cmb.3072g14HMbwK.00240/h277.cosmo50cmb.3072g14HMbwK.00240')
+gas_mask1= np.isin(s1.g['iord'],igas[nineteen])
+s1a=s1.g[gas_mask1]
+jerrya=(s1a['rho']/s1a['mass']).in_units('cm**-3')*s1a['temp']
+table.append(jerrya)
+
+s1= pb.load('/data/REPOSITORY/e12Gals/h277.cosmo50cmb.3072g14HMbwK/h277.cosmo50cmb.3072g14HMbwK.00252/h277.cosmo50cmb.3072g14HMbwK.00252')
+gas_mask1= np.isin(s1.g['iord'],igas[twenty])
+s1a=s1.g[gas_mask1]
+jerrya=(s1a['rho']/s1a['mass']).in_units('cm**-3')*s1a['temp']
+table.append(jerrya)
+
+s1= pb.load('/data/REPOSITORY/e12Gals/h277.cosmo50cmb.3072g14HMbwK/h277.cosmo50cmb.3072g14HMbwK.00264/h277.cosmo50cmb.3072g14HMbwK.00264')
+gas_mask1= np.isin(s1.g['iord'],igas[twentyone])
+s1a=s1.g[gas_mask1]
+jerrya=(s1a['rho']/s1a['mass']).in_units('cm**-3')*s1a['temp']
+table.append(jerrya)
+
+s1= pb.load('/data/REPOSITORY/e12Gals/h277.cosmo50cmb.3072g14HMbwK/h277.cosmo50cmb.3072g14HMbwK.00276/h277.cosmo50cmb.3072g14HMbwK.00276')
+gas_mask1= np.isin(s1.g['iord'],igas[twentytwo])
+s1a=s1.g[gas_mask1]
+jerrya=(s1a['rho']/s1a['mass']).in_units('cm**-3')*s1a['temp']
+table.append(jerrya)
+
+s1= pb.load('/data/REPOSITORY/e12Gals/h277.cosmo50cmb.3072g14HMbwK/h277.cosmo50cmb.3072g14HMbwK.00288/h277.cosmo50cmb.3072g14HMbwK.00288')
+gas_mask1= np.isin(s1.g['iord'],igas[twentythree])
+s1a=s1.g[gas_mask1]
+jerrya=(s1a['rho']/s1a['mass']).in_units('cm**-3')*s1a['temp']
+table.append(jerrya)
+
+s1= pb.load('/data/REPOSITORY/e12Gals/h277.cosmo50cmb.3072g14HMbwK/h277.cosmo50cmb.3072g14HMbwK.00300/h277.cosmo50cmb.3072g14HMbwK.00300')
+gas_mask1= np.isin(s1.g['iord'],igas[twentyfour])
+s1a=s1.g[gas_mask1]
+jerrya=(s1a['rho']/s1a['mass']).in_units('cm**-3')*s1a['temp']
+table.append(jerrya)
+
+s1= pb.load('/data/REPOSITORY/e12Gals/h277.cosmo50cmb.3072g14HMbwK/h277.cosmo50cmb.3072g14HMbwK.00312/h277.cosmo50cmb.3072g14HMbwK.00312')
+gas_mask1= np.isin(s1.g['iord'],igas[twentyfive])
+s1a=s1.g[gas_mask1]
+jerrya=(s1a['rho']/s1a['mass']).in_units('cm**-3')*s1a['temp']
+table.append(jerrya)
+
+s1= pb.load('/data/REPOSITORY/e12Gals/h277.cosmo50cmb.3072g14HMbwK/h277.cosmo50cmb.3072g14HMbwK.00324/h277.cosmo50cmb.3072g14HMbwK.00324')
+gas_mask1= np.isin(s1.g['iord'],igas[twentysix])
+s1a=s1.g[gas_mask1]
+jerrya=(s1a['rho']/s1a['mass']).in_units('cm**-3')*s1a['temp']
+table.append(jerrya)
+
+s1= pb.load('/data/REPOSITORY/e12Gals/h277.cosmo50cmb.3072g14HMbwK/h277.cosmo50cmb.3072g14HMbwK.00328/h277.cosmo50cmb.3072g14HMbwK.00328')
+gas_mask1= np.isin(s1.g['iord'],igas[twentyseven])
+s1a=s1.g[gas_mask1]
+jerrya=(s1a['rho']/s1a['mass']).in_units('cm**-3')*s1a['temp']
+table.append(jerrya)
+
+s1= pb.load('/data/REPOSITORY/e12Gals/h277.cosmo50cmb.3072g14HMbwK/h277.cosmo50cmb.3072g14HMbwK.00336/h277.cosmo50cmb.3072g14HMbwK.00336')
+gas_mask1= np.isin(s1.g['iord'],igas[twentyeight])
+s1a=s1.g[gas_mask1]
+jerrya=(s1a['rho']/s1a['mass']).in_units('cm**-3')*s1a['temp']
+table.append(jerrya)
+
+s1= pb.load('/data/REPOSITORY/e12Gals/h277.cosmo50cmb.3072g14HMbwK/h277.cosmo50cmb.3072g14HMbwK.00348/h277.cosmo50cmb.3072g14HMbwK.00348')
+gas_mask1= np.isin(s1.g['iord'],igas[twentynine])
+s1a=s1.g[gas_mask1]
+jerrya=(s1a['rho']/s1a['mass']).in_units('cm**-3')*s1a['temp']
+table.append(jerrya)
+
+s1= pb.load('/data/REPOSITORY/e12Gals/h277.cosmo50cmb.3072g14HMbwK/h277.cosmo50cmb.3072g14HMbwK.00360/h277.cosmo50cmb.3072g14HMbwK.00360')
+gas_mask1= np.isin(s1.g['iord'],igas[thirty])
+s1a=s1.g[gas_mask1]
+jerrya=(s1a['rho']/s1a['mass']).in_units('cm**-3')*s1a['temp']
+table.append(jerrya)
+
+s1= pb.load('/data/REPOSITORY/e12Gals/h277.cosmo50cmb.3072g14HMbwK/h277.cosmo50cmb.3072g14HMbwK.00372/h277.cosmo50cmb.3072g14HMbwK.00372')
+gas_mask1= np.isin(s1.g['iord'],igas[thirtyone])
+s1a=s1.g[gas_mask1]
+jerrya=(s1a['rho']/s1a['mass']).in_units('cm**-3')*s1a['temp']
+table.append(jerrya)
+
+s1= pb.load('/data/REPOSITORY/e12Gals/h277.cosmo50cmb.3072g14HMbwK/h277.cosmo50cmb.3072g14HMbwK.00384/h277.cosmo50cmb.3072g14HMbwK.00384')
+gas_mask1= np.isin(s1.g['iord'],igas[thirtytwo])
+s1a=s1.g[gas_mask1]
+jerrya=(s1a['rho']/s1a['mass']).in_units('cm**-3')*s1a['temp']
+table.append(jerrya)
+
+s1= pb.load('/data/REPOSITORY/e12Gals/h277.cosmo50cmb.3072g14HMbwK/h277.cosmo50cmb.3072g14HMbwK.00396/h277.cosmo50cmb.3072g14HMbwK.00396')
+gas_mask1= np.isin(s1.g['iord'],igas[thirtythree])
+s1a=s1.g[gas_mask1]
+jerrya=(s1a['rho']/s1a['mass']).in_units('cm**-3')*s1a['temp']
+table.append(jerrya)
+
+s1= pb.load('/data/REPOSITORY/e12Gals/h277.cosmo50cmb.3072g14HMbwK/h277.cosmo50cmb.3072g14HMbwK.00408/h277.cosmo50cmb.3072g14HMbwK.00408')
+gas_mask1= np.isin(s1.g['iord'],igas[thirtyfour])
+s1a=s1.g[gas_mask1]
+jerrya=(s1a['rho']/s1a['mass']).in_units('cm**-3')*s1a['temp']
+table.append(jerrya)
+
+s1= pb.load('/data/REPOSITORY/e12Gals/h277.cosmo50cmb.3072g14HMbwK/h277.cosmo50cmb.3072g14HMbwK.00420/h277.cosmo50cmb.3072g14HMbwK.00420')
+gas_mask1= np.isin(s1.g['iord'],igas[thirtyfive])
+s1a=s1.g[gas_mask1]
+jerrya=(s1a['rho']/s1a['mass']).in_units('cm**-3')*s1a['temp']
+table.append(jerrya)
+
+s1= pb.load('/data/REPOSITORY/e12Gals/h277.cosmo50cmb.3072g14HMbwK/h277.cosmo50cmb.3072g14HMbwK.00432/h277.cosmo50cmb.3072g14HMbwK.00432')
+gas_mask1= np.isin(s1.g['iord'],igas[thirtysix])
+s1a=s1.g[gas_mask1]
+jerrya=(s1a['rho']/s1a['mass']).in_units('cm**-3')*s1a['temp']
+table.append(jerrya)
+
+s1= pb.load('/data/REPOSITORY/e12Gals/h277.cosmo50cmb.3072g14HMbwK/h277.cosmo50cmb.3072g14HMbwK.00444/h277.cosmo50cmb.3072g14HMbwK.00444')
+gas_mask1= np.isin(s1.g['iord'],igas[thirtyseven])
+s1a=s1.g[gas_mask1]
+jerrya=(s1a['rho']/s1a['mass']).in_units('cm**-3')*s1a['temp']
+table.append(jerrya)
+
+s1= pb.load('/data/REPOSITORY/e12Gals/h277.cosmo50cmb.3072g14HMbwK/h277.cosmo50cmb.3072g14HMbwK.00456/h277.cosmo50cmb.3072g14HMbwK.00456')
+gas_mask1= np.isin(s1.g['iord'],igas[thirtyeight])
+s1a=s1.g[gas_mask1]
+jerrya=(s1a['rho']/s1a['mass']).in_units('cm**-3')*s1a['temp']
+table.append(jerrya)
+
+s1= pb.load('/data/REPOSITORY/e12Gals/h277.cosmo50cmb.3072g14HMbwK/h277.cosmo50cmb.3072g14HMbwK.00468/h277.cosmo50cmb.3072g14HMbwK.00468')
+gas_mask1= np.isin(s1.g['iord'],igas[thirtynine])
+s1a=s1.g[gas_mask1]
+jerrya=(s1a['rho']/s1a['mass']).in_units('cm**-3')*s1a['temp']
+table.append(jerrya)
+
+s1= pb.load('/data/REPOSITORY/e12Gals/h277.cosmo50cmb.3072g14HMbwK/h277.cosmo50cmb.3072g14HMbwK.00480/h277.cosmo50cmb.3072g14HMbwK.00480')
+gas_mask1= np.isin(s1.g['iord'],igas[fourty])
+s1a=s1.g[gas_mask1]
+jerrya=(s1a['rho']/s1a['mass']).in_units('cm**-3')*s1a['temp']
+table.append(jerrya)
+
+s1= pb.load('/data/REPOSITORY/e12Gals/h277.cosmo50cmb.3072g14HMbwK/h277.cosmo50cmb.3072g14HMbwK.00492/h277.cosmo50cmb.3072g14HMbwK.00492')
+gas_mask1= np.isin(s1.g['iord'],igas[fourtyone])
+s1a=s1.g[gas_mask1]
+jerrya=(s1a['rho']/s1a['mass']).in_units('cm**-3')*s1a['temp']
+table.append(jerrya)
+
+
+
+print(table)
+np.savetxt('pressure_bulge.txt',table,fmt='%s')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+print('------------------------------------------------------------------------')
+print (igas[first])
+print (igas[second])
+print (igas[third])
+print (igas[fourth])
+print (igas[fifth])
+print (igas[sixth])
+print (igas[seventh])
+print (igas[eigth])
+print (igas[ninth])
+print (igas[tenth])
+print (igas[eleven])
+print (igas[twelve])
+print (igas[thirteen])
+print (igas[fourteen])
+print (igas[fifteen])
+print (igas[sixteen])
+print (igas[seventeen])
+print (igas[eighteen])
+print (igas[nineteen])
+print (igas[twenty])
+print (igas[twentyone])
+print (igas[twentytwo])
+print (igas[twentythree])
+print (igas[twentyfour])
+print (igas[twentyfive])
+print (igas[twentysix])
+print (igas[twentyseven])
+print (igas[twentyeight])
+print (igas[twentynine])
+print (igas[thirty])
+print (igas[thirtyone])
+print (igas[thirtytwo])
+print (igas[thirtythree])
+print (igas[thirtyfour])
+print (igas[thirtyfive])
+print (igas[thirtysix])
+print (igas[thirtyseven])
+print (igas[thirtyeight])
+print (igas[thirtynine])
+print (igas[fourty])
+print (igas[fourtyone])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

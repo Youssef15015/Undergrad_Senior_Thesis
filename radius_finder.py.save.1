@@ -1,0 +1,24 @@
+import pynbody as pb
+import numpy as np
+
+def SFR(halo):
+    weights = halo.st['massform'] # mass of each star particle at formation
+    print (weights)
+    tmax_yr = 1617941739.0781007 # the timestep's time since the start of the s$
+    time_bin = 100000000
+    nbins = int(tmax_yr/time_bin) # number of time bins
+
+    M = np.histogram(halo.st['tform'].in_units("yr"),bins=nbins,weights=weights$
+    print(M)
+    SFR = M[1]/time_bin #Divide the mass of stars in each bin by the width of t$
+    SFR= np.mean(SFR)
+
+    return SFR #Return star formation rate for the halo across all time bins up unti the current time
+
+
+s= pb.load('/data/REPOSITORY/e12Gals/h277.cosmo50cmb.3072g14HMbwK/h277.cosmo50cmb.3072g14HMbwK.00060/h277.cosmo50cmb.3072g14HMbwK.00060')
+h=s.halos(sorton=True)
+sfr_0= SFR(h[1])
+
+
+

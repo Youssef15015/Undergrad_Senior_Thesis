@@ -1,0 +1,46 @@
+import pynbody as pb
+import numpy as np 
+import matplotlib.pyplot as plt
+
+
+timestep=input('last 3 digits of timestep:')
+nbins= int(input('number of bins='))
+xmin = float(input('minimum range:'))
+xmax = float(input('maximum range:'))
+choice = input('1,2, or 3')
+
+
+s= pb.load('/data/REPOSITORY/e12Gals/h277.cosmo50cmb.3072g14HMbwK/h277.cosmo50cmb.3072g14HMbwK.00'+timestep+'/h277.cosmo50cmb.3072g14HMbwK.00'+timestep)
+s.physical_units()
+h1=s.halos()[1]
+pb.analysis.halo.center(h1)
+X=np.genfromtxt('/home/yhe3/Documents/hpid_5.5_277_all.txt')
+
+
+
+
+gas_mask=np.isin(h1.s['iord'],X)
+gas_mask2=np.isin(s.s['iord'],X)
+
+
+Z= np.array((h1.s[gas_mask]['metals']*2))/(0.018)
+Z_50= np.array(h1.s[gas_mask][h1.s[gas_mask]['r']>50]['metals']*2)/(0.018)
+Z2=np.array(s.s[gas_mask]['metals']*2)/(0.018)
+
+
+
+outerstars= h1.s[gas_mask]['r']>= 50 
+
+logplot=[]
+for x in Z:
+	if x ==0:
+		logplot.append(-4)
+	else:logplot.append(np.log10(x))
+	
+
+
+plt.hist(logplot,bins=nbins,range=(xmin,xmax))
+plt.title('Metallicity')
+plt.xlabel('Z/Z_sun')
+plt.show()
+

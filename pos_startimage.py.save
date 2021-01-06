@@ -1,0 +1,65 @@
+import pynbody as pb
+import numpy as np 
+import matplotlib.pyplot as plt
+
+
+timestep=input('last 3 digits of timestep:')
+nbins= int(input('number of bins='))
+xmin= input('minimum range=')
+xman= input('maximum range=')
+choice= int(input('1,2,or 3:'))
+
+s= pb.load('/data/REPOSITORY/e12Gals/h277.cosmo50cmb.3072g14HMbwK/h277.cosmo50cmb.3072g14HMbwK.00'+timestep+'/h277.cosmo50cmb.3072g14HMbwK.00'+timestep)
+s.physical_units()
+h1=s.halos()[1]
+pb.analysis.halo.center(h1)
+X=np.genfromtxt('/home/yhe3/Documents/hpid_5.5_277_all.txt')
+
+
+gas_mask=np.isin(h1.s['iord'],X)
+gas_mask2=np.isin(s.s['iord'],X)
+
+
+if choice ==1:
+
+	Z= np.array(h1.s[gas_mask]['pos)
+
+	plt.hist(Z,bins=nbins,range=(xmin,xman))
+	plt.title(r'$Radiual Distribution of Stars When They Formed$')
+	plt.xlabel(r'$kpc$')
+	plt.show()
+
+
+
+
+elif choice==2:
+
+        Z= np.array(h1.s[gas_mask][h1.s[gas_mask]['r']>50]['age'].in_units('Gyr'))
+
+        plt.hist(Z,bins=nbins)
+        plt.title(r'$Radiual Distribution of Stars When They Formed$')
+        plt.xlabel(r'$kpc$')
+        plt.show()
+
+
+
+elif choice ==3:
+
+        Z= np.array(h1.s[gas_mask][h1.s[gas_mask]['r']>50]['metals']*2)/(0.018)
+
+        logplot=[]
+        for x in Z:
+                if x ==0:
+                        logplot.append(-4)
+                else:logplot.append(np.log10(x))
+
+
+
+        plt.hist(logplot,bins=nbins,range=(xmin,xmax))
+        plt.title('Metallicity')
+        plt.xlabel('Z/Z_sun')
+        plt.show()
+
+
+
+
